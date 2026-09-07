@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aoun Abbas | YouTube Automation</title>
+<meta name="description" content="Aoun Abbas — student building skills in YouTube automation: niche research, faceless content production, editing, and channel growth.">
+<meta name="keywords" content="Aoun Abbas, YouTube automation, faceless YouTube channel, student portfolio">
+<meta property="og:title" content="Aoun Abbas | YouTube Automation">
+<meta property="og:description" content="Student building skills in YouTube automation.">
+<meta property="og:image" content="aoun-abbas.webp">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14120f;
+    --bg-soft: #1b1815;
+    --amber: #e8a33d;
+    --slate: #7c8894;
+    --text: #f2ede3;
+    --muted: #a49a8c;
+    --line: #33302a;
+  }
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* HERO */
+  .hero{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    min-height: 100svh;
+    gap: 0;
+  }
+  .hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 48px;
+  }
+  .hero-kicker{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--amber);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.1s forwards;
+  }
+  .hero-name{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.25s forwards;
+  }
+  .hero-role{
+    margin-top: 22px;
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 40ch;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.4s forwards;
+  }
+  .hero-role strong{ color: var(--text); font-weight: 600; }
+  .hero-cta{
+    margin-top: 36px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.55s forwards;
+  }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: 3px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn.primary{
+    background: var(--amber);
+    color: #1a1500;
+    border-color: var(--amber);
+  }
+  .btn.primary:hover{ background: #f2b559; }
+  .btn.ghost{ color: var(--text); }
+  .btn.ghost:hover{ border-color: var(--amber); }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-photo{
+    position: relative;
+    background: var(--bg-soft);
+    overflow: hidden;
+  }
+  .hero-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.95) contrast(1.03);
+  }
+  .hero-photo::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--bg) 0%, rgba(20,18,15,0) 14%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 760px){
+    .hero{ grid-template-columns: 1fr; }
+    .hero-photo{ height: 52vh; order: -1; }
+    .hero-photo::after{ background: linear-gradient(to bottom, rgba(20,18,15,0) 70%, var(--bg) 100%); }
+    .hero-text{ padding: 40px 24px 56px; }
+  }
+
+  /* SECTIONS */
+  section{ padding: 96px 0; border-top: 1px solid var(--line); }
+  .section-head{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .section-head h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-head p{
+    color: var(--muted);
+    max-width: 52ch;
+  }
+  @media (max-width: 700px){
+    .section-head{ grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* FOCUS CARDS */
+  .focus-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .focus-card{
+    background: var(--bg);
+    padding: 36px;
+  }
+  .focus-card .num{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--slate);
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+  .focus-card h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .focus-card p{ color: var(--muted); font-size: 0.97rem; }
+  @media (max-width: 700px){
+    .focus-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* CONTACT */
+  .contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .contact-item{
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-item .label{
+    color: var(--slate);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+  .contact-item .value{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  @media (max-width: 700px){
+    .contact{ grid-template-columns: 1fr; }
+  }
+
+  footer{
+    padding: 32px 0 48px;
+    color: var(--slate);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-kicker">Portfolio</div>
+      <h1 class="hero-name">Aoun Abbas</h1>
+      <p class="hero-role">Student, currently building <strong>skills in YouTube automation</strong> — researching niches, producing faceless content, and learning what makes a channel grow.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="tel:03146260054">Call 0314 6260054</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="aoun-abbas.webp" alt="Aoun Abbas">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>Still a student, and using that time to learn a craft outside the classroom — how automated YouTube channels are researched, scripted, edited, and grown, end to end.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I'm working on</h2>
+        <p>YouTube automation, broken into the parts I'm actively learning right now.</p>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="num">01</div>
+          <h3>Niche research</h3>
+          <p>Finding topics with steady demand and low competition before committing time to a channel.</p>
+        </div>
+        <div class="focus-card">
+          <div class="num">02</div>
+          <h3>Content production</h3>
+          <p>Scripting and assembling faceless videos — voiceover, footage, and pacing that keeps people watching.</p>
+        </div>
+        <div class="focus-card">
+          <div class="num">03</div>
+          <h3>Editing</h3>
+          <p>Cutting for retention: trimming dead air, timing cuts to the voiceover, clean captions.</p>
+        </div>
+        <div class="focus-card">
+          <div class="num">04</div>
+          <h3>Growth</h3>
+          <p>Reading titles, thumbnails, and watch-time data to figure out what actually gets a video recommended.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Open to talking about YouTube automation projects or collaborations.</p>
+      </div>
+      <div class="contact">
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:03146260054">0314 6260054</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Status</div>
+          <div class="value">Student · Available to connect</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Aoun Abbas</div>
+  </footer>
+
+</body>
+</html>
